@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { ImEye, ImEyeBlocked } from "react-icons/im"
 
 function Login({ setUser }) {
   const [username, setUsername] = useState([]);
   const [password, setPassword] = useState([]);
 
-  function toggleShowPassword() {
-    const password = document.querySelector("#password");
-    const type =
-    password.getAttribute("type") === "password" ? "text" : "password";
-    password.setAttribute("type", type);
-  }
+  // function toggleShowPassword() {
+  //   const password = document.querySelector("#password");
+  //   const type =
+  //     password.getAttribute("type") === "password" ? "text" : "password";
+  //   password.setAttribute("type", type);
+  // }
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -36,50 +37,35 @@ function Login({ setUser }) {
 
   return (
     <div>
-      <h1>Login</h1>
-      <div>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-        />
+      <div className="login-container">
+      <h1 className="centered-header">Login</h1>
         <form onSubmit={handleFormSubmit}>
-          <label htmlFor="username">Username</label>
           <input
             type="text"
-            id="username"
-            autoComplete="off"
             value={username}
+            className="login-form"
+            id="username"
+            placeholder="username"
+            autoComplete="off"
             onChange={(event) => setUsername(event.target.value)}
           />
-          <label htmlFor="password">Password</label>
           <input
             type="password"
             value={password}
             minLength="5"
-            maxLength="15"
+            className="login-form"
             id="password"
+            placeholder="password"
             onChange={(event) => setPassword(event.target.value)}
             required
           />
-          <i
-            className="far fa-eye"
-            id="togglePassword"
-            onClick={toggleShowPassword}
-            style={{ marginLeft: "-25px", cursor: "pointer" }}
-          />
-          <button type="submit">Submit</button>
+          <button type="submit" className="login-form login-submit-button">Submit</button>
         </form>
       </div>
-      <div className="nav-bar">
-        <NavLink
-          to="/Signup"
-          exact
-          className="nav-bar-route"
-          activeStyle={{
-            background: "#235789",
-          }}
-        >
-          Signup
+      <div className="login-signup-field">
+        <p>Not registered? </p>
+        <NavLink to="/Signup" exact className="signup-route-button">
+          Create an account
         </NavLink>
       </div>
     </div>

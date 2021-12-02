@@ -11,4 +11,5 @@ start app:
 -npm start --prefix client
 
 other:
--how I had to install sass: npm install node-sass --save
+-how I had to install sass: npm install node-sass --save --prefix client
+-react icons install: npm install react-icons --save --prefix client

@@ -2,14 +2,14 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div className="navbar">
-      <NavLink to="/" exact className="navbarroutes">
+    <div className="nav-bar">
+      <NavLink to="/" exact className="nav-bar-route-button">
         Home
       </NavLink>
-      <NavLink to="/Search" exact className="navbarroutes">
+      <NavLink to="/Search" exact className="nav-bar-route-button">
         Search
       </NavLink>
-      <NavLink to="/Login" exact className="navbarroutes">
+      <NavLink to="/Login" exact className="nav-bar-route-button">
         Login
       </NavLink>
     </div>

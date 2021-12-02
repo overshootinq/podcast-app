@@ -2,6 +2,7 @@ class CreatePodcasts < ActiveRecord::Migration[6.1]
   def change
     create_table :podcasts do |t|
       t.string :name
+      t.string :host
       t.string :description
       t.string :genre
       t.string :thumbnail
