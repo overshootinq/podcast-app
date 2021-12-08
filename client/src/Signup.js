@@ -6,13 +6,6 @@ function Signup({ setUser }) {
   const [password, setPassword] = useState([]);
   const [password_confirmation, setPasswordConfirmation] = useState([]);
 
-  function toggleShowPassword() {
-    const password = document.querySelector("#password");
-    const type =
-    password.getAttribute("type") === "password" ? "text" : "password";
-    password.setAttribute("type", type);
-  }
-
 //   function toggleShowPassword() {
 //     const password = document.querySelector("#password_confirmation");
 //     const type =
